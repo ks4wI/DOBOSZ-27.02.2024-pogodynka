@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -17,7 +17,7 @@ using Microsoft.Maps.MapControl.WPF;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace WpfApp1
+namespace pogoda
 {
     public partial class MainWindow : Window
     {
@@ -60,14 +60,6 @@ namespace WpfApp1
             labelSnieg3plus.Content = (dane["list"][3]["weather"][0]["main"].ToString() == "Snow" ? "Tak" : "Nie");
             labelWilgotnosc3plus.Content = dane["list"][3]["main"]["humidity"].ToString() + " %";
             labelNaslonecznienie3plus.Content = dane["list"][3]["clouds"]["all"].ToString() + " %";
-
-            labelMiejscowosc3min.Content = dane["city"]["name"];
-            labelTemperatura3min.Content = dane["list"][0]["main"]["temp"].ToString() + " °C";
-            labelOdczuwalna3min.Content = dane["list"][0]["main"]["feels_like"].ToString() + " °C";
-            labelDeszcz3min.Content = (dane["list"][0]["weather"][0]["main"].ToString() == "Rain" ? "Tak" : "Nie");
-            labelSnieg3min.Content = (dane["list"][0]["weather"][0]["main"].ToString() == "Snow" ? "Tak" : "Nie");
-            labelWilgotnosc3min.Content = dane["list"][0]["main"]["humidity"].ToString() + " %";
-            labelNaslonecznienie3min.Content = dane["list"][0]["clouds"]["all"].ToString() + " %";
         }
     }
 }
