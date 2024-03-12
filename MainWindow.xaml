@@ -1,12 +1,12 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+<Window x:Class="pogoda.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:pogoda"
         mc:Ignorable="d"
-        Title="MainWindow" Height="888" Width="1415">
+        Title="MainWindow">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="128px"/>
@@ -34,32 +34,23 @@
         <Label Background="Gray" Grid.Row="0" Grid.Column="6" x:Name="labelWilgotnoscInfo" Content="Wilgotnosc: " FontSize="20px" FontWeight="Bold"/>
         <Label Background="Gray" Grid.Row="0" Grid.Column="7" x:Name="labelNaslonecznienieInfo" Content="Naslonecznienie: " FontSize="20px" FontWeight="Bold"/>
         <!---->
-        <Label Background="Gray" Grid.Row="1" Grid.Column="0" x:Name="godzina3min" Content="- 3 godziny:" FontSize="20px" FontWeight="Bold"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="1" x:Name="labelMiejscowosc3min" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="2" x:Name="labelTemperatura3min" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="3" x:Name="labelOdczuwalna3min" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="4" x:Name="labelDeszcz3min" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="5" x:Name="labelSnieg3min" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="6" x:Name="labelWilgotnosc3min" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="1" Grid.Column="7" x:Name="labelNaslonecznienie3min" Content="" FontSize="20px"/>
+        <Label Background="Gray" Grid.Row="1" Grid.Column="0" x:Name="godzina" Content="     Teraz:" FontSize="20px" FontWeight="Bold"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="2" x:Name="labelTemperatura" Content="" FontSize="20px"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="3" x:Name="labelOdczuwalna" Content="" FontSize="20px"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="4" x:Name="labelDeszcz" Content="" FontSize="20px"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="5" x:Name="labelSnieg" Content="" FontSize="20px"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="1" x:Name="labelMiejscowosc" Content="" FontSize="20px"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="6" x:Name="labelWilgotnosc" Content="" FontSize="20px"/>
+        <Label FontWeight="Bold" Background="LightGray" Grid.Row="1" Grid.Column="7" x:Name="labelNaslonecznienie" Content="" FontSize="20px"/>
         <!---->
-        <Label Background="Gray" Grid.Row="2" Grid.Column="0" x:Name="godzina" Content="      Teraz:" FontSize="20px" FontWeight="Bold"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="1" x:Name="labelMiejscowosc" Content="" FontSize="20px"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="2" x:Name="labelTemperatura" Content="" FontSize="20px"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="3" x:Name="labelOdczuwalna" Content="" FontSize="20px"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="4" x:Name="labelDeszcz" Content="" FontSize="20px"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="5" x:Name="labelSnieg" Content="" FontSize="20px"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="6" x:Name="labelWilgotnosc" Content="" FontSize="20px"/>
-        <Label FontWeight="Bold" Background="LightGray" Grid.Row="2" Grid.Column="7" x:Name="labelNaslonecznienie" Content="" FontSize="20px"/>
-        <!---->
-        <Label Background="Gray" Grid.Row="3" Grid.Column="0" x:Name="godzina3plus" Content="+ 3 godziny:" FontSize="20px" FontWeight="Bold"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="1" x:Name="labelMiejscowosc3plus" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="2" x:Name="labelTemperatura3plus" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="3" x:Name="labelOdczuwalna3plus" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="4" x:Name="labelDeszcz3plus" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="5" x:Name="labelSnieg3plus" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="6" x:Name="labelWilgotnosc3plus" Content="" FontSize="20px"/>
-        <Label Background="LightGray" Grid.Row="3" Grid.Column="7" x:Name="labelNaslonecznienie3plus" Content="" FontSize="20px"/>
-        <m:Map x:Name="bingMap" Grid.Row="4" Grid.Column="0" Mode="AerialWithLabels" ZoomLevel="3" CredentialsProvider="AtCmvUAtBBu9cafqW42vTD8VQYwzgx7-f_HmVWWlcNtOu8EmpiG9cHgCcXMqZR-Y" MouseLeftButtonDown="klikniecie" Margin="0,0,0,-312" Grid.ColumnSpan="8"/>
+        <Label Background="Gray" Grid.Row="2" Grid.Column="0" x:Name="godzina3plus" Content="+ 3 godzin:" FontSize="20px" FontWeight="Bold"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="1" x:Name="labelMiejscowosc3plus" Content="" FontSize="20px"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="2" x:Name="labelTemperatura3plus" Content="" FontSize="20px"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="3" x:Name="labelOdczuwalna3plus" Content="" FontSize="20px"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="4" x:Name="labelDeszcz3plus" Content="" FontSize="20px"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="5" x:Name="labelSnieg3plus" Content="" FontSize="20px"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="6" x:Name="labelWilgotnosc3plus" Content="" FontSize="20px"/>
+        <Label Background="LightGray" Grid.Row="2" Grid.Column="7" x:Name="labelNaslonecznienie3plus" Content="" FontSize="20px"/>
+        <m:Map x:Name="bingMap" Grid.Row="3" Grid.Column="0" Mode="AerialWithLabels" ZoomLevel="3" CredentialsProvider="AtCmvUAtBBu9cafqW42vTD8VQYwzgx7-f_HmVWWlcNtOu8EmpiG9cHgCcXMqZR-Y" MouseLeftButtonDown="klikniecie" Margin="0,0,0,-272" Grid.ColumnSpan="8" Grid.RowSpan="2"/>
     </Grid>
 </Window>
